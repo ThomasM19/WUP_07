@@ -63,6 +63,13 @@ with(kRdata, table(Sex, result))
   
 ## Numerical results
 
+```{r}
+table1 <- xtabs(~result + Sex, data=kRdata)
+rowPerc(table1)
+colPerc(table1)
+```
+
+Now that we have the exact percentages, we can see that for the ones who lived there was a greater percentage of females than males; and for the ones who died, there was a greater percentage of males than females. 
 
 ## Inferential results 
 

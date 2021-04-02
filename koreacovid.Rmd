@@ -1,7 +1,7 @@
 ---
 title: "covid 19"
 author: "Thomas Matthews"
-date: "4/2/2021/"
+date: "4/2/2021"
 output:
   html_document: default
   pdf_document: default
@@ -24,8 +24,12 @@ state of a patient must be died or alive - we adjust that as well
   
 # Question 1 - Is dying independent of sex
 
+```{r}
+barchartGC(~result + Sex,data=kRdata)
+barchartGC(~result + Sex,data=kRdata, type="percent")
 
-
+```
+There is a bigger percentage of males who died than females. About 57% of females lived and about 40% of males lived. 
 
 Table of patients:
 ```{r}
@@ -38,7 +42,7 @@ with(kRdata, table(Sex, result))
 
 ## We create two bar charts - one based on frequency and the other on percent, use ggplot commands to do this
 
-`
+
 
   
 

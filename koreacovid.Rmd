@@ -25,11 +25,21 @@ state of a patient must be died or alive - we adjust that as well
 # Question 1 - Is dying independent of sex
 
 ```{r}
-barchartGC(~result + Sex,data=kRdata)
-barchartGC(~result + Sex,data=kRdata, type="percent")
+dd2 <- kRdata %>% group_by(result,Sex) %>% summarize(count=n()) %>% mutate(prcnt=count/sum(count))
 
+
+# the group_by followed by summarize(count=n())
+
+basicC <- ggplot(dd2,aes(x=result,y=count,fill=Sex))
+basicC + geom_bar(stat="identity",position="dodge")
+
+#Now for percentage plot
+
+basicCC <- ggplot(dd2,aes(x=result,y=prcnt*100,fill=Sex)) 
+basicCC + geom_bar(stat="identity", position = "dodge")
 ```
-There is a bigger percentage of males who died than females. About 57% of females lived and about 40% of males lived. 
+
+From the people that lived there were more females than males that loved. of those who lived, about 57% of them were females and about 40% of them were male. From the people that died, about 61% were males and about 37% were female. 
 
 Table of patients:
 ```{r}

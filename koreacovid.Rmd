@@ -39,7 +39,7 @@ basicCC <- ggplot(dd2,aes(x=result,y=prcnt*100,fill=Sex))
 basicCC + geom_bar(stat="identity", position = "dodge")
 ```
 
-From the people that lived there were more females than males that loved. of those who lived, about 57% of them were females and about 40% of them were male. From the people that died, about 61% were males and about 37% were female. 
+From the people that lived there were more females than males that lived. of those who lived, about 57% of them were females and about 40% of them were male. From the people that died, about 61% were males and about 37% were female. 
 
 Table of patients:
 ```{r}
@@ -79,8 +79,8 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-The odds of a male dying is 2.3 times greater than the odds of a female dying. 
+The odds of a male dying is 2.3 times greater than the odds of a female dying. Males are much more likely to die than females are. 
 
 ## Conclusions
 
-The data shows that it is more likely that a male will die than a female. 
+The data shows that it is more likely that a male will die than a female. As the data has proved males are at a higher risk of dying than females are by almost 2.3 times. 
